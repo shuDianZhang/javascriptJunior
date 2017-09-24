@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    //想要获取函数内的值
+    var str = '';
+    function fn1(){
+        var a = '大鸡腿~';
+        str = a;
+    }
+    fn1();
+
+
+    //在if和for语句里面定义和在语句外面定义没什么区别
+    alert(a);       //undefine
+    alert(fn);      //火狐浏览器会显示  fn is not define ，但是谷歌浏览器会正常弹出函数体
+    if(true){
+        var a=1;
+        function fn1(){
+            alert(123);
+        }
+    }
+
+
+
+</script>
+<body>
+
+</body>
+</html>

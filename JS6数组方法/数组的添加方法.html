@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+//  push()方法
+    var arr = [];
+    arr.push(1,2,3);
+    arr.push(4);
+    alert(arr);     //1,2,3,4
+    alert(arr.push('abc'));   // 5    说明push()函数有一个返回值，返回值是此时数组的长度
+
+//  unshift()方法
+    arr.unshift(0);           //将内容往前塞进数组
+    alert(arr);
+    alert(arr.unshift());     //    unshift()函数有一个返回值，返回值是此时数组的长度, IE6 IE7 不支持返回值
+</script>
+<body>
+
+</body>
+</html>

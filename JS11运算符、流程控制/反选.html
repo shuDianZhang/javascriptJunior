@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反选</title>
+</head>
+<script>
+    // checked 为 true 则被选上，否则没有被选上
+    window.onload = function () {
+        var aBtn = document.getElementsByTagName('input')[0];
+        var oUl = document.getElementsByTagName('ul')[0];
+        var aChe = oUl.getElementsByTagName('input');
+        var door = true;
+        aBtn.onclick = function(){
+            if(door){
+                for(var i=0 ; i<aChe.length ; i++){
+                    aChe[i].checked = true;
+                    door = false;
+                }
+            }else{
+                for(var i=0 ; i<aChe.length ; i++){
+                    aChe[i].checked = false;
+                    door = true;
+                }
+            }
+        }
+
+    }
+</script>
+<body>
+<input type="button" value="反选"/>
+<ul>
+    <li><input type="checkbox" /></li>
+    <li><input type="checkbox" /></li>
+    <li><input type="checkbox" /></li>
+    <li><input type="checkbox" /></li>
+    <li><input type="checkbox" /></li>
+</ul>
+</body>
+</html>

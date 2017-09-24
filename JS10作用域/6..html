@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    window.onload = function(){
+        var aBtn = document.getElementsByTagName('input');
+        for(var i=0 ; i<aBtn.length ; i++){
+            aBtn[i].onclick = function () {
+                //alert(i);
+                for(var i=0; i<aBtn.length ; i++){
+                    aBtn[i].style.backgroundColor = 'yellow';
+                }
+
+
+            }
+        }
+    }
+</script>
+<body>
+<input type="button" value="按钮1"/>
+<input type="button" value="按钮2"/>
+<input type="button" value="按钮3"/>
+</body>
+</html>

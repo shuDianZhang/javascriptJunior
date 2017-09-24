@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    window.onload = function(){
+//        document.title = 123;
+//        document.body.innerHTML = 'abc';
+//        动态属性getElementById没有这种属性
+          var aBtn = document.getElementsByTagName('input');
+          document.body.innerHTML = '<input type="button" value="按钮"/><input type="button" value="按钮"/><input type="button" value="按钮"/>';
+          alert(aBtn.length);
+           aBtn[0].onclick =function(){
+            alert(1);
+        }
+    };
+</script>
+<body>
+<input type="button" value="按钮"/>
+<input type="button" value="按钮"/>
+<input type="button" value="按钮"/>
+</body>
+</html>

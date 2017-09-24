@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+            position:absolute;
+            top: 200px;
+        }
+    </style>
+    <script type="text/javascript" src="MyFunctionBox.js"></script>
+    <script>
+        window.onload = function(){
+            var aImg = document.getElementsByTagName('img');
+            for(var i=0 ; i<aImg.length ; i++){
+                aImg[i].style.left = i*210 + 10 +'px';
+                aImg[i].onmouseover = function(){
+                    shake(this,'top');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<img src="图片素材/1.jpg" />
+<img src="图片素材/2.jpg" />
+<img src="图片素材/3.jpg" />
+<img src="图片素材/4.jpg" />
+<img src="图片素材/5.jpg" />
+<img src="图片素材/6.jpg" />
+<img src="图片素材/7.jpg" />
+<img src="图片素材/8.jpg" />
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+        /*浮动、绝对定位、margin 三种定位不能相互混合使用*/
+
+        body{
+            /*background-color: darkgrey;*/
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        ul{
+            position: absolute;
+            right: 40px;
+            top: 0px;
+        }
+        li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            /*background-color: darkorange;*/
+            background-color: darkgrey;
+            margin-bottom: 5px;
+        }
+        img{
+            width: 400px;
+            height: 500px;
+        }
+        div{
+            height: 600px;
+            width: 500px;
+            margin: 20px auto;
+            position: relative;
+            /*background-color: red;*/
+        }
+        .active{
+            background-color: darkorange;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            var  aLi = document.getElementsByTagName('li');
+            var aImg = document.getElementsByTagName('img');
+            var arr = ['img/1.png','img/2.png','img/3.png','img/4.png'];
+            for(var i=0 ; i<aLi.length ; i++){
+                aLi[i].index = i;
+                aLi[i].onclick = function(){
+
+                      for(var j=0 ; j<aLi.length; j++){
+                          aLi[j].className = '';
+                      }
+
+                      aImg[0].src = arr[this.index];
+                      this.className = 'active';
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+<div>
+    <img src="img/1.png">
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

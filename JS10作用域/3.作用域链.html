@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    var a = 1;
+    function fn1(){
+        alert(a);   // 1  当在局部预解析库中找不到时，会通过作用域链找到父级解析库
+        a=2;
+    }
+    fn1();
+    alert(a);      // 2
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script  type="text/javascript" src="MyFunctionBox.js"></script>
+    <style type="text/css">
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(function(){
+              $('btn1').onclick = function(){
+//                  alert($('div1').id);
+//                  alert($('div1').style.width);                   //该方法只能获取到行间样式
+//                  alert(getComputedStyle($('div1')).width);      //优先行间样式中的width   IE 6 7 8 不兼容
+                  /*
+                           getComputedStyle()  支持IE9以上的浏览器，不支持IE8 IE7....
+                           获取到的是计算机（浏览器）计算后的样式
+                   */
+
+//                   alert($('div1').currentStyle.width);             //标准浏览器不兼容（火狐浏览器）
+                  alert(getStyle($('div1'),'height'));
+                  /*
+                   background: url() red ....                     复合样式（不要获取）
+                   */
+                  alert(getStyle($('div1'),'background'));
+                  /*
+                   background-color  在JS 中写成 backgroundColor   单一样式（不能用来做判断）
+                   */
+                  alert(getStyle($('div1'),'backgroundColor'));
+
+
+              }
+        });
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="按钮"/>
+<div id="div1" style="width: 200px"></div>
+</body>
+</html>

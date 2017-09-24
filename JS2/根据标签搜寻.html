@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+//            静态方法
+//            document.getElementById('ul');
+
+//            动态方法
+//            document.getElementsByTagName('ul');
+//            oUl.getElementsByName('li');
+             var oUl = document.getElementById('list');
+            var aLi = oUl.getElementsByTagName('li');
+            //aLi => [li,li,li]长得很像数组，有数组的特性
+//            调用onclick等事件的时候，aLi需要加上[]具体指定，否则无法执行
+            alert( aLi.length);
+        }
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

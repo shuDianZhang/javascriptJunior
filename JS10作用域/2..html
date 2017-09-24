@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /*
+    script 全局变量、全局函数有全局解析库
+           自上而下
+    函数
+       由里到外，不可以由外到里
+
+    Json{}
+     */
+    var i=2 ;
+</script>
+<script>
+    alert(i);   //2
+</script>
+<script>
+    var a = 1;
+    function fn1(){
+        alert(a);
+        var a=2;    //弹出undefine
+    }
+    fn1();
+    alert(a);      //弹出 1
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 100px; height: 100px; background-color: red; position: absolute; top:50px; left: 30px;
+        }
+    </style>
+    <script type="text/javascript" src="MyFunctionBox.js"></script>
+    <script>
+        window.onload = function(){
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+
+            var oDiv = document.getElementById('div1');
+
+            oBtn1.onclick = function(){
+                doMove(oDiv,'width',12,300,function(){
+                    doMove(oDiv,'height',12,300);
+                });
+            }
+
+            oBtn2.onclick = function(){
+                doMove(oDiv,'left',12,30);
+            }
+
+            // 形参： 运动对象、运动方向（元素样式 left,top,width...）、运动速度、运动目标 回调函数
+            function doMove(obj,attr,dir,target,endFn){
+                dir = parseInt(getStyle(obj,attr))<target ? dir : -dir;
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function(){
+                    //speed表示当前物体运动的位置
+                    var speed = parseInt(getStyle(obj,attr))+dir;
+                    if(speed>target&&dir>0||speed<target&&dir<0){
+                        speed = target;
+                    }
+                    oDiv.style[attr] = speed+'px';
+                    if(speed == target){
+                        clearInterval(obj.timer);
+                        endFn&&endFn();
+                    }
+                },30);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="变大"/>
+<input id="btn2" type="button" value="往后"/>
+<div id="div1"></div>
+</body>
+</html>

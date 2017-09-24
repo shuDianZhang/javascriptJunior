@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    /*
+      JS中的数据类型  number、string、boolean、function、object(数组、Json)
+      typeof 判断数据类型
+     */
+    var obj = window;
+    alert(typeof obj);
+
+    // 当数据类型为object，可以往上面添加东西(自定义属性)
+    //Json和数组利用typeof检测也是弹出object数据类型
+    var obj = document;
+    obj.abc = 123;
+    alert(document.abc);
+</script>
+<body>
+
+</body>
+</html>

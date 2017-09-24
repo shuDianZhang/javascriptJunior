@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //字符串的截取
+    //substring(n,m);    截取出来n-m之间的字符串，当参数为负数的时候，当作0来处理。
+    //slice(n,m);        截取出来n-m之间的字符串,不同于substring,当参数为负数的时候，可以从后往前截取。
+    //toUpperCase();     将字符串转化成大写
+    //toLowerCase();     将字符串转化成小写
+    var str = '百度新闻是包含海量资讯的新闻服务平台,真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等,快速了解它们的最新进展。';
+    alert(str.slice(-10,-3));
+    //字符串的比较，比较的是开头字符的unicode编码的大小。
+    //    alert('abbbbb'>'b');
+</script>
+<body>
+
+</body>
+</html>

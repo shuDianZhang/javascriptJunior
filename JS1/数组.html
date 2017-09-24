@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+           //  var arr = ['这是一句话','这是二句话'];
+            // alert(arr.length);
+            // arr.push('我是最后一位');   //往数组最后以为添加数据
+
+            var arr = ["图片素材/1.jpg" ,"图片素材/2.jpg",
+                    "图片素材/3.jpg" ,"图片素材/4.jpg" ];
+//            for(var i=1 ; i<10 ; i++){
+//                 arr.push("图片素材/"+i+".jpg");
+//            }
+             var oNext = document.getElementById('next');
+             var oPrev = document.getElementById('prev');
+             var oImg = document.getElementById('img1');
+            var  oSpan = document.getElementById('span1');
+            var countImg = arr.length;
+            var num = 1;
+            oNext.onclick = function(){
+                num = num + 1;
+                if(num<=countImg){
+                    oSpan.innerHTML = num+'/'+countImg;
+                    oImg.src = "图片素材/"+num+".jpg";
+                }else{
+                    num=countImg;
+                    alert("这是最后一张图片了");
+                }
+            }
+            oPrev.onclick = function(){
+                num = num-1;
+                if(num>=1){
+                    oSpan.innerHTML = num+'/'+countImg;
+                    oImg.src = "图片素材/"+num+".jpg";
+                }else{
+                    num = 1;
+                    alert("往前没有图片了哦~");
+                }
+             }
+
+
+        }
+    </script>
+    <style type="text/css">
+        #content{
+            width: 700px;
+            height: 380px;
+            margin: 0 auto;
+            position: relative;
+            /*background-color: #99ff33;*/
+        }
+        a{
+            text-decoration: none;
+            font-size: 50px;
+            color: gray;
+            display: block;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+        #prev{
+            position: absolute;
+            left: 0px;
+            top: 175px;
+        }
+        #next{
+            position: absolute;
+            right: 0px;
+            top: 175px;
+        }
+        span{
+            position: absolute;
+            bottom: 0px;
+            left: 330px;
+            font-size: 30px;
+        }
+        P{
+            height: 20px;
+            width: 200px;
+            line-height: 20px;
+            text-align: center;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+      <a id="prev" href="javascript:;"><</a>
+      <a id="next" href="javascript:;">></a>
+      <p id="text">这是第一张图片</p>
+      <span id="span1">?/?</span>
+      <img id="img1" src="图片素材/1.jpg" />
+</div>
+</body>
+</html>

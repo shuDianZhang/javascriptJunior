@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    //对字母进行排序
+    var arr = ['c','d','a','e'];
+    arr.sort();      //按照unicode编码进行排序
+    alert(arr);     //a c d e
+
+
+    //对数字进行排序
+    var arr2 = ['45','47','26','45','8'];
+    //arr2.sort();    //实际上字符串之间进行比较，会有问题
+    arr2.sort(function(a,b){
+        // 从arr2中随机抽取两个数比较
+        //若a<=b ; 不交换位置
+        //若a>b  ; a,b交换位置
+        return a-b;
+    });
+    alert(arr2);
+
+    //对字符串进行排序
+    var arrWidth = ['345px','23px','10px','1000px'];
+    arrWidth.sort(function (a,b){
+        return parseInt(a) - parseInt(b);
+    });
+    alert(arrWidth);
+
+    //随机排序
+    // alert(Math.random());  //随机返回一个0-1之间的数字
+    var arr = [1,2,3,4,5,6,7,8];
+    arr.sort(function(a,b){
+        //正值交换，负值不交换,一会儿交换，一会儿不交换
+        return Math.random()-0.5;
+    });
+
+
+</script>
+<body>
+
+</body>
+</html>

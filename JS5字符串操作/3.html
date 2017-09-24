@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr = ['aa','bb','cc'];
+        alert(arr.join());              //将数组转化成字符串    aa,bb,cc
+        alert(arr.join(''));            //将数组转化成字符串    aabbcc
+        alert(arr.join('-'));           //将数组转化成字符串   aa-bb-cc
+
+        var str = 'www.baidu.com';
+        var arr = str.split('.');       //将字符串拆分成数组
+
+        var str1 = 'shu';
+        alert(str1.split());           //将字符串转成数组['shu']
+        alert(str1.split(''));         //将字符串转成数组['s','h','u']
+
+        var str3 = '/www.baidu.com/';
+        alert(str3.split('/'));        //将字符串转成数组['','www.baidu.com','']
+
+        var str4 = '2017-02-14-19-53-12';
+        alert(str3.split('-',3));      //只取前面三截
+    </script>
+</head>
+<body>
+
+</body>
+</html>

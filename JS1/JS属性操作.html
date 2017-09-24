@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+/*
+    重点是:value属性
+    HTML属性操作
+    属性名
+    属性值
+
+    属性读操作：获取、找到
+    元素.属性名
+
+    属性的写操作： （添加）替换、修改
+    元素.属性名 = 新的值；
+
+    例如: oDiv.value
+          oDiv.className = "red";
+*/
+    window.onload = function(){
+        var oText = document.getElementById('text1');
+        var oBtn = document.getElementById('btn1');
+        var oSelect = document.getElementById('select1');
+        var oChange = document.getElementById('changeImg');
+       // oBtn.onclick = function(){
+//            alert(text1.value);
+//            字符串的连接
+     //      alert(oText.value+'在'+oSelect.value);
+      //  }
+        oBtn.onclick = function(){
+            oBtn.value = 'Button';
+            oText.value= '按钮';
+        }
+
+        oChange.onclick = function(){
+            img1.src = oText.value;
+        }
+    }
+</script>
+<input id="text1" type="text"/>
+<select id="select1">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="杭州">杭州</option>
+</select>
+<input id="btn1" type="button" value="按钮" />
+<br/>
+<img id="img1" src="../图片素材/1.jpg"  width="400px"/>
+<input  id="changeImg" type="button" value="图片切换"/>
+</body>
+</html>

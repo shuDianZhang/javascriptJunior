@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统时间</title>
+</head>
+<script>
+//关键点 ： 字符串操作charAt();
+
+    window.onload = function () {
+        var oP = document.getElementById('time');
+        var aImg = document.getElementsByTagName('img');
+        setInterval(fnTime,1000);
+        function fnTime(){
+            // new Date();  //当前（不同时间调用不一样）系统的时间对象
+            var myTime = new Date();
+            var iYear = myTime.getFullYear();
+            var iMonth = myTime.getMonth()+1;
+            var iDate = myTime.getDate();
+            var iWeek = myTime.getDay();
+            var iHours = myTime.getHours();
+            var iMin = myTime.getMinutes();
+            var iSec = myTime.getSeconds();
+            var str = toTwo(iHours) + toTwo(iMin) + toTwo(iSec);
+            oP.innerHTML = str;
+
+            aImg[0].src = 'img/'+str.charAt(0)+'.JPG';
+            aImg[1].src = 'img/'+str.charAt(1)+'.JPG';
+            aImg[2].src = 'img/colon.JPG';
+            aImg[3].src = 'img/'+str.charAt(2)+'.JPG';
+            aImg[4].src = 'img/'+str.charAt(3)+'.JPG';
+            aImg[5].src = 'img/colon.JPG';
+            aImg[6].src = 'img/'+str.charAt(4)+'.JPG';
+            aImg[7].src = 'img/'+str.charAt(5)+'.JPG';
+        }
+        function toTwo(n){         //将以为数字转化成两位数字
+            if(n<10){
+                return '0'+n;
+            }else{
+                return n;
+            }
+        }
+
+
+    }
+
+
+
+</script>
+<body>
+<p id="time" style="font-size:60px"></p>
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+<img src="img/1.JPG" />
+</body>
+</html>

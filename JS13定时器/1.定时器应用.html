@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 100px; height: 100px; background-color: red; position: absolute; top:50px; left: 30px;
+          }
+    </style>
+    <script type="text/javascript" src="MyFunctionBox.js"></script>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn1');
+            var oDiv = document.getElementById('div1');
+
+            oBtn.onclick = function(){
+                //alert(oDiv.style.left);            //不可以直接读取行间样式
+                //oDiv.style.left = 80+'px';         //可以直接修改元素样式
+                //alert(getStyle(oDiv,'left'));      //30px
+                clearInterval(oDiv.timer);
+                oDiv.timer = setInterval(function(){
+                    var speed = parseInt(getStyle(oDiv,'left'))+19;
+                    if(speed>800){
+                        speed = 800;
+                    }
+                    oDiv.style.left = speed+'px';
+                    if(speed == 800){
+                        clearInterval(oDiv.timer);
+                        alert(speed);
+                    }
+                },30);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="按钮"/>
+<div id="div1"></div>
+</body>
+</html>

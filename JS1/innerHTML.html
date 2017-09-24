@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div1{
+            width: 240px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+//        oP.innerHTML 可以获取p便签里面的内容
+        window.onload = function(){
+
+            var oDiv = document.getElementById('div1');
+            var oSpan = document.getElementById('span1');
+            var oText = document.getElementById('text1');
+            var oBtn = document.getElementById('button1');
+
+            oBtn.onclick = function(){
+                oDiv.innerHTML = oDiv.innerHTML+oText.value + '<br/>';
+                oText.value='';
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<span id="span1">留言噢~：</span>
+<input id="text1" type="text" />
+<input id="button1" type="button" value="add" />
+</body>
+</html>

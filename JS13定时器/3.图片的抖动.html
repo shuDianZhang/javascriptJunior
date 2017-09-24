@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shake</title>
+    <style>
+        img{
+            position: absolute;
+            top: 200px;
+            left: 500px;
+            width: 500px;
+        }
+    </style>
+    <script type="text/javascript" src="MyFunctionBox.js"></script>
+    <script>
+        window.onload = function(){
+            var oImg = document.getElementById('img1');
+            oImg.onclick = function(){
+              shake(oImg,'top',function(){
+                  alert(1);
+              });
+            }
+        }
+    </script>
+</head>
+<body>
+<img id="img1" src="图片素材/6.jpg"/>
+</body>
+</html>

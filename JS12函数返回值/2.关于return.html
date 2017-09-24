@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    //return 返回值
+    //数字、字符串、布尔值、函数、对象（元素/数组和JSON） 未定义
+    //
+
+    function fn2(){
+        return function(){
+            alert(1);   //我是注释~
+        };
+    }
+    alert(fn2());
+    fn2()();
+
+    window.onload = function(){
+   //     var oBtn = document.getElementById('btn1');
+          var oBtn = getId('btn1');
+           oBtn.value = '修改';
+
+    }
+
+    function getId(id){
+        return document.getElementById(id);
+    }
+
+</script>
+
+<body>
+<input id="btn1" type="button" value="按钮"/>
+</body>
+</html>

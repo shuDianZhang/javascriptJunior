@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /*
+         函数传递参数
+         参数 = JS的数据类型
+         数字、字符串、布尔、函数、对象、未定义
+         重要的是： 明确调用与被调用，调用把参数放到被调用里面去执行
+                    对传进来的参数进行了哪些处理
+   */
+    fn1(100,'px');
+    function fn1(a,b){
+        alert(a+b);
+    }
+
+
+    //当传递的是函数
+
+    fn2(function(){
+        alert(1);
+    });
+
+    function fn2 (fn){
+        fn();
+    }
+
+    fn5(window,document);
+    function fn5(w,d){
+        w.onload = function(){
+            d.body.innerHTML = '哈哈哈';
+        }
+    }
+
+
+</script>
+<body>
+
+</body>
+</html>

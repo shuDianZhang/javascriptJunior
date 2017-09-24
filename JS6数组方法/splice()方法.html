@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    //splice()方法
+    //删除、替换、添加
+
+    var arr = ['TM1','对方2','方式3','都是4'];
+    //arr.splice(0,2);           //从第0位开始，删除两个
+    //arr.splice(0,2,'替换');    //从第0位开始，替换掉两个
+    //arr.splice(1,0,'添加');     //从位置1开始添加内容，实际上是替换的改版
+
+    //alert(arr);
+    //alert(arr.splice(0,2));     //splice()返回的是被删除的数组内容
+
+    //数组去重
+    var arr2 = [1,2,2,4,2];
+    for(var i=0 ; i<arr2.length ; i++){
+        for(var j=i+1; j<arr2.length;j++){
+             if(arr[i] == arr[j]){
+                 arr.splice(j,1);
+                 j--;
+             }
+        }
+    }
+</script>
+<body>
+
+</body>
+</html>
